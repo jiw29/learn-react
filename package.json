@@ -4,13 +4,12 @@
   "description": "react-webpack-typescript-starterkit",
   "main": "main.js",
   "scripts": {
-    "lint": "tslint -c tslint.json 'src/**/*.ts?(x)' --fix",
     "dev": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js  --env=production --progress ",
-    "compile": "tsc"
+    "build": "webpack --config webpack.prod.js  --env=production --progress "
   },
   "keywords": [
-    "react,webpack,typescript,starterkit"
+    "learn",
+    "react"
   ],
   "author": "",
   "license": "ISC",
