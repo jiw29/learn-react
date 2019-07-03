@@ -1,7 +1,7 @@
 {
   "name": "react-webpack-typescript-starterkit",
   "version": "1.0.0",
-  "description": "react-webpack-typescript-starterkit",
+  "description": "react learn",
   "main": "main.js",
   "scripts": {
     "dev": "webpack-dev-server --open --config webpack.dev.js",
