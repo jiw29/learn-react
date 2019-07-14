@@ -107,7 +107,7 @@ module.exports = {
   },
   devServer: {
     hot: true, // 激活服务器的HMR
-    host: '0.0.0.0',
+    host: '127.0.0.1',
     contentBase: path.join(__dirname, '/build'),
     publicPath: '/',
     port: 3000,
