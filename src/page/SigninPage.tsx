@@ -1,5 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import Form from '../packages/Form/Form';
+import TextField from '../packages/Form/TextField';
 
 export default class SiginPage extends React.Component<any, any> {
   constructor(props: {}) {
@@ -15,9 +17,10 @@ export default class SiginPage extends React.Component<any, any> {
 
   public handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    setTimeout(() => {
-      this.setState({ redirectToReferrer: true });
-    }, 1000);
+    console.log(e);
+    // setTimeout(() => {
+    //   this.setState({ redirectToReferrer: true });
+    // }, 1000);
   }
   public handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -30,25 +33,24 @@ export default class SiginPage extends React.Component<any, any> {
     const { redirectToReferrer } = this.state;
     if (redirectToReferrer) { return <Redirect to={from} /> }
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>用户名：</label>
-          <input
-            type="text"
-            name="username"
-            id="username"
-            onChange={this.handleUsernameChange}
-          />
-          <label>密码：</label>
-          <input
-            type="text"
-            name="password"
-            id="password"
-            onChange={this.handlePasswordChange}
-          />
-          <button type="submit">登录</button>
-        </form>
-      </div>
+      <Form onSubmit={this.handleSubmit}>
+        <TextField
+          label="用户名"
+          type="text"
+          name="username"
+          id="username"
+          rules={[
+            { type: 'string', required: true, trigger: 'blur', msg: '' }
+          ]}
+        />
+        <TextField
+          label="密码"
+          type="password"
+          name="password"
+          id="password"
+        />
+        <button type="submit">登录</button>
+      </Form>
     );
   }
 }
